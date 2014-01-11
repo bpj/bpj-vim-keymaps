@@ -6,7 +6,7 @@ My vim keymaps, most of them quite ugly hacks...
 bxs.vim
 -------
 
-My variation of CXS(http://www.theiling.de/ipa/),
+My variation of [CXS](http://www.theiling.de/ipa/),
 mainly additions to accommodate more Unicode phonetic
 characters, IPA and otherwise, but note that
 
