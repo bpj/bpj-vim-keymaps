@@ -1,10 +1,10 @@
 " Vim keymap for inputting (Ancient) Greek through
 " ASCII-Latin 'transliterations.
-"
+" 
 " Maintained by: Benct Philip Jonsson
 " <bpj@melroch.se>
-"
-"
+" 
+" 
 " My take on entering Unicode (Ancient
 " [polytonic](http://en.wikipedia.org/wiki/Greek_diacritics))
 " Greek. Unlike Beta Code 1:1 character correspondence is neither a
@@ -12,8 +12,8 @@
 " `kh/.or.e` -- or `ch/.or.i` or anything in between if that suits
 " your pronunciation or orthographic habits --, and if you want to
 " write **ξηρά** you type `x.er/a` or `ks.er/a` or...
-
-" So it's mainly a normal Latin- letter transcription with ASCII
+" 
+" So it's mainly a normal Latin-letter transcription with ASCII
 " punctuation thrown in as diacritics, so that you normally type Greek
 " words in such a way that if you remove those punctuation 'diacritics'
 " you get a spelling which corresponds to the normal Latinized spelling of
@@ -24,7 +24,7 @@
 " looks like a cap **χ**? Maybe we shall be thankful they wrote BC Greek
 " in `ALLCAPS` or they would have used `p` for **ρ**, `n` for **π** and
 " `v` for **ν**, or wouldn't they?)
-
+" 
 " All punctuation 'diacritics' go before the letter they modify, so that
 " punctuation characters which normally only are used at the end of words
 " can usually be typed normally! Conveniently rough breathing (spiritus
@@ -32,125 +32,118 @@
 " lenis) has to be entered explicitly as `,`, which was the best match I
 " could find not wanting to use parentheses as diacritics; there is
 " nothing you can do about it the way vim keymaps work.
-"
-" The input character sequences were choosen to
-" suit me and my keyboard layout.  If they don't
-" suit you or your keybord layout don't come
-" complaining with me; instead rename the file and
-" edit it to suit you!
-"
-" I have prepared the file to make it easy to use
-" ~ instead of < for circumflex: just comment out
-" all lines below the one where U+00BB
-" RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK is
-" defined which contain < and uncomment all lines
-" which contain ~ with the following regular
-" expressions:
-
-"   :.,$s/^\S*</" &/ 
-"   :%s/^"\(\S*\~\)/\1/
-
-" Similarly you can use _i instead of ;i for iota
-" subscript by commenting lines with ;i and
-" uncommenting those with _ :
-
-"   :%s/^\S*;i/" &/
-"   :%s/^"\(\S*_\)/\1/
-
-" The input key combinations for Greek characters
-" consist of Latin letters, combinations of Latin
-" letters or combinations of punctuation
-" characters and Latin letters. The combinations
-" have been choosen by four principles:
-
-"    1) Similarity to the standard Latin
-"       transliteration of the respective Greek
-"       letters and diacritics (the latter
-"       concerning only the rough breathing.
-"    2) Correspondence in meaning between Latin and
-"       Greek punctuation marks (in the case of the
-"       Greek question mark and colon).
-"    3) Visual similarity between Greek diacritics
-"       and ASCII punctuation characters.
-"    4) The fact that certain punctuation marks
-"       (notably . , : ; are normally followed by
-"       whitespace and not by letters, which makes
-"       them unambiguous as diacritics when they
-"       precede letters.
-
-" In practice this means that you basically type
-" Greek words as you would transliterate them into
-" Latin.  To indicate diacritics above letters you
-" type certain punctuation characters which are
-" visually similar to the respective Greek
-" diacritics before you type the letter, just as
-" you hit deadkeys before letter keys to get
-" letters with diacritics with the ordinary
-" keyboard. This principle of preceding diacritic
-" punctuation characters has been extended to
-" where the same Latin letter corresponds to more
-" than one Greek letter -- notably with eta and
-" omega, but also with archaic and old-style
-" letter forms.  Some examples:
-
-" You type:     You get:
-" ------------  ------------
-" th            θ
-" ha            ἁ
-" ,a            ἀ
-" /a            ά 
-" \a            ὰ 
-" <a            ᾶ 
-" h/a           ἅ 
-" ,/a           ἄ 
-" h\a           ἃ 
-" e             ε
-" .e            ϵ
-" ,/e
-" ,/.e
-
-" .H           Ͱ U+0370 GREEK CAPITAL LETTER HETA
-" .h           ͱ U+0371 GREEK SMALL LETTER HETA
-" .S           Ͳ U+0372 GREEK CAPITAL LETTER ARCHAIC SAMPI
-" .s           ͳ U+0373 GREEK SMALL LETTER ARCHAIC SAMPI
-" .W           Ͷ U+0376 GREEK CAPITAL LETTER PAMPHYLIAN DIGAMMA
-" .w           ͷ U+0377 GREEK SMALL LETTER PAMPHYLIAN DIGAMMA
-" ,c           ͻ U+037B GREEK SMALL REVERSED LUNATE SIGMA SYMBOL
-" .c           ͼ U+037C GREEK SMALL DOTTED LUNATE SIGMA SYMBOL
-" .E           Η U+0397 GREEK CAPITAL LETTER ETA
-" .I           Η U+0397 GREEK CAPITAL LETTER ETA
-" .O           Ω U+03A9 GREEK CAPITAL LETTER OMEGA
-" .e           η U+03B7 GREEK SMALL LETTER ETA
-" .i           η U+03B7 GREEK SMALL LETTER ETA
-" ,s            ς U+03C2 GREEK SMALL LETTER FINAL SIGMA
-" .o           ω U+03C9 GREEK SMALL LETTER OMEGA
-" .b           ϐ U+03D0 GREEK BETA SYMBOL
-" .v           ϐ U+03D0 GREEK BETA SYMBOL
-" .th          ϑ U+03D1 GREEK THETA SYMBOL
-" .U           ϒ U+03D2 GREEK UPSILON WITH HOOK SYMBOL
-" .Y           ϒ U+03D2 GREEK UPSILON WITH HOOK SYMBOL
-" .ph          ϕ U+03D5 GREEK PHI SYMBOL
-" .f           ϕ U+03D5 GREEK PHI SYMBOL
-" .p           ϖ U+03D6 GREEK PI SYMBOL
-" .Q           Ϙ U+03D8 GREEK LETTER ARCHAIC KOPPA
-" .q           ϙ U+03D9 GREEK SMALL LETTER ARCHAIC KOPPA
-" .St          Ϛ U+03DA GREEK LETTER STIGMA
-" .ST          Ϛ U+03DA GREEK LETTER STIGMA
-" .st          ϛ U+03DB GREEK SMALL LETTER STIGMA
-" .Sp          Ϡ U+03E0 GREEK LETTER SAMPI
-" .SP          Ϡ U+03E0 GREEK LETTER SAMPI
-" .sp          ϡ U+03E1 GREEK SMALL LETTER SAMPI
-" .k           ϰ U+03F0 GREEK KAPPA SYMBOL
-" .r           ϱ U+03F1 GREEK RHO SYMBOL
-" .Th          ϴ U+03F4 GREEK CAPITAL THETA SYMBOL
-" .TH          ϴ U+03F4 GREEK CAPITAL THETA SYMBOL
-" ,e           ϵ U+03F5 GREEK LUNATE EPSILON SYMBOL
-" ;e           ϶ U+03F6 GREEK REVERSED LUNATE EPSILON SYMBOL
-" ,r           ϼ U+03FC GREEK RHO WITH STROKE SYMBOL
-" ,C           Ͻ U+03FD GREEK CAPITAL REVERSED LUNATE SIGMA SYMBOL
-" .C           Ͼ U+03FE GREEK CAPITAL DOTTED LUNATE SIGMA SYMBOL
-
-let b:keymap_name="latgrk"
+" 
+" The input character sequences were choosen to suit me and my
+" (Swedish) keyboard layout. If they don't suit you or your keybord
+" layout don't come complaining with me; instead rename the file
+" and edit it to suit you!
+" 
+" I have prepared the file to make it easy to use `~` instead of
+" `<` for circumflex: just comment out all lines below the one
+" where U+00BB RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK is
+" defined which contain `<` and uncomment all lines which contain
+" `~` with the following regular expressions:
+" 
+"     :.,$s/^\S*</" &/ 
+"     :%s/^"\(\S*\~\)/\1/
+" 
+" Similarly you can use `_i` instead of `;i` for iota subscript by
+" commenting lines with `;i` and uncommenting those with `_`:
+" 
+"     :%s/^\S*;i/" &/
+"     :%s/^"\(\S*_\)/\1/
+" 
+" The input key combinations for Greek characters consist of Latin
+" letters, combinations of Latin letters or combinations of
+" punctuation characters and Latin letters. The combinations have
+" been choosen by these principles:
+" 
+" 1.  Similarity to the standard Latin transliteration of the
+"     respective Greek letters and diacritics (the latter
+"     concerning only the rough breathing.
+" 2.  Correspondence in meaning between Latin and Greek punctuation
+"     marks (in the case of the Greek question mark and colon).
+" 3.  Visual similarity between Greek diacritics and ASCII
+"     punctuation characters.
+" 4.  The fact that certain punctuation marks (notably `. , : ;`
+"     are normally followed by whitespace and not by letters,
+"     which makes them unambiguous as diacritics when they
+"     precede letters.
+" 5.  Ease of typing on my Swedish keyboard; that's why I avoid
+"     `; :` which are both shifted characters on my keyboard.
+" 
+" In practice this means that you basically type Greek words as you
+" would transliterate them into Latin. To indicate diacritics above
+" letters you type certain punctuation characters which are
+" visually similar to the respective Greek diacritics before you
+" type the letter, just as you hit deadkeys before letter keys to
+" get letters with diacritics with the ordinary keyboard. This
+" principle of preceding diacritic punctuation characters has been
+" extended to where the same Latin letter corresponds to more than
+" one Greek letter -- notably with eta and omega, but also with
+" archaic and old-style letter forms. Some examples:
+" 
+"     You type:     You get:
+"     ------------  ------------
+"     th            θ
+"     ha            ἁ
+"     ,a            ἀ
+"     /a            ά 
+"     \a            ὰ 
+"     <a            ᾶ 
+"     h/a           ἅ 
+"     ,/a           ἄ 
+"     h\a           ἃ 
+"     e             ε
+"     .e            η
+"     ,/e
+"     ,/.e
+" 
+" A list of simple letters entered with a preceding punctuation character:
+" 
+"     .H           Ͱ U+0370 GREEK CAPITAL LETTER HETA
+"     .h           ͱ U+0371 GREEK SMALL LETTER HETA
+"     .S           Ͳ U+0372 GREEK CAPITAL LETTER ARCHAIC SAMPI
+"     .s           ͳ U+0373 GREEK SMALL LETTER ARCHAIC SAMPI
+"     .W           Ͷ U+0376 GREEK CAPITAL LETTER PAMPHYLIAN DIGAMMA
+"     .w           ͷ U+0377 GREEK SMALL LETTER PAMPHYLIAN DIGAMMA
+"     ,c           ͻ U+037B GREEK SMALL REVERSED LUNATE SIGMA SYMBOL
+"     .c           ͼ U+037C GREEK SMALL DOTTED LUNATE SIGMA SYMBOL
+"     .E           Η U+0397 GREEK CAPITAL LETTER ETA
+"     .I           Η U+0397 GREEK CAPITAL LETTER ETA
+"     .O           Ω U+03A9 GREEK CAPITAL LETTER OMEGA
+"     .e           η U+03B7 GREEK SMALL LETTER ETA
+"     .i           η U+03B7 GREEK SMALL LETTER ETA
+"     ,s            ς U+03C2 GREEK SMALL LETTER FINAL SIGMA
+"     .o           ω U+03C9 GREEK SMALL LETTER OMEGA
+"     .b           ϐ U+03D0 GREEK BETA SYMBOL
+"     .v           ϐ U+03D0 GREEK BETA SYMBOL
+"     .th          ϑ U+03D1 GREEK THETA SYMBOL
+"     .U           ϒ U+03D2 GREEK UPSILON WITH HOOK SYMBOL
+"     .Y           ϒ U+03D2 GREEK UPSILON WITH HOOK SYMBOL
+"     .ph          ϕ U+03D5 GREEK PHI SYMBOL
+"     .f           ϕ U+03D5 GREEK PHI SYMBOL
+"     .p           ϖ U+03D6 GREEK PI SYMBOL
+"     .Q           Ϙ U+03D8 GREEK LETTER ARCHAIC KOPPA
+"     .q           ϙ U+03D9 GREEK SMALL LETTER ARCHAIC KOPPA
+"     .St          Ϛ U+03DA GREEK LETTER STIGMA
+"     .ST          Ϛ U+03DA GREEK LETTER STIGMA
+"     .st          ϛ U+03DB GREEK SMALL LETTER STIGMA
+"     .Sp          Ϡ U+03E0 GREEK LETTER SAMPI
+"     .SP          Ϡ U+03E0 GREEK LETTER SAMPI
+"     .sp          ϡ U+03E1 GREEK SMALL LETTER SAMPI
+"     .k           ϰ U+03F0 GREEK KAPPA SYMBOL
+"     .r           ϱ U+03F1 GREEK RHO SYMBOL
+"     .Th          ϴ U+03F4 GREEK CAPITAL THETA SYMBOL
+"     .TH          ϴ U+03F4 GREEK CAPITAL THETA SYMBOL
+"     ,e           ϵ U+03F5 GREEK LUNATE EPSILON SYMBOL
+"     ;e           ϶ U+03F6 GREEK REVERSED LUNATE EPSILON SYMBOL
+"     ,r           ϼ U+03FC GREEK RHO WITH STROKE SYMBOL
+"     ,C           Ͻ U+03FD GREEK CAPITAL REVERSED LUNATE SIGMA SYMBOL
+"     .C           Ͼ U+03FE GREEK CAPITAL DOTTED LUNATE SIGMA SYMBOL
+  
+  
+let b:keymap_name="bpjgrk"
 
 scriptencoding utf-8
 
@@ -158,7 +151,7 @@ scriptencoding utf-8
 " between rough and smooth breathings in my normal
 " gui font at normal size, so I colorcode them:
 hi RoughBreathing guifg=red
-hi SmoothBreathing guifg=SeaGreen
+hi SmoothBreathing guifg=blue
 let w:mrb=matchadd('RoughBreathing','[ἁἃἅἇἉἋἍἏἑἓἕἙἛἝἡἣἥἧἩἫἭἯἱἳἵἷἹἻἽἿὁὃὅὉὋὍὑὓὕὗὙὛὝὟὡὣὥὧὩὫὭὯᾁᾃᾅᾇᾉᾋᾍᾏᾑᾓᾕᾗᾙᾛᾝᾟᾡᾣᾥᾧᾩᾫᾭᾯῥῬ]')
 let w:msb=matchadd('SmoothBreathing','[ἀἂἄἆἈἊἌἎἐἒἔἘἚἜἠἢἤἦἨἪἬἮἰἲἴἶἸἺἼἾὀὂὄὈὊὌὐὒὔὖὠὢὤὦὨὪὬὮᾀᾂᾄᾆᾈᾊᾌᾎᾐᾒᾔᾖᾘᾚᾜᾞᾠᾢᾤᾦᾨᾪᾬᾮῤ]')
 
