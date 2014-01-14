@@ -24,3 +24,23 @@ latin.vim
 ---------
 
 A hacky concoction on similar principles to enter Unicode Latin-script characters and combining diacritics. I'm planning to replace it with something better-thought-out in a not too far away future (but you know how those things go! :-)
+
+BPJ's keymap-switching plugin
+=============================
+
+mapkeymap2.vim
+--------------
+
+My hacky plugin to add mappings for switching keymaps.
+
+The original idea was that I could add letter:keymapname pairs in a dict rather than copy-pasting mappings ad nauseam.
+
+So the dict looks like
+
+```vimL
+{'a':'keymapA', 'b':'keymapB', 'c':'keymapC',}
+```
+
+and the mappings become `<F11>a <F11>b <F11>c` which of course suits noone but me!
+
+Each mapping calls a function with the keymap name as argument which first sets the buffer-local variable `b:lastkeymap` to the current value of `&l:keymap`, then sets `'keymap'` locally to the argument. When you then use the mapping `<F11><F11>` a function is called which calls the aforementioned keymap-setting function with the variable `b:lastkeymap` as argument, thus effectively switching between the current keymap and the previous, which may be no keymap at all.

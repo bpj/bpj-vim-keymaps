@@ -85,6 +85,7 @@ loadkeymap
 ,T	Ṱ
 ,f	f̭
 ,F	F̭
+,C  C̭
 
 :a	ä
 :A	Ä
