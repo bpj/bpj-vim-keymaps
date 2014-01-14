@@ -5,6 +5,12 @@ hi lCursor cterm=NONE ctermbg=cyan ctermfg=cyan gui=NONE guibg=cyan guifg=cyan
 loadkeymap
 " Don't remove this line!
 
+...	...
+..	.
+,,	,
+::	:
+;;	;
+
 ;s	ś
 ;S	Ś
 ;z	ź
