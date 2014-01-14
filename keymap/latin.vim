@@ -1,6 +1,6 @@
 
-let b:keymap_name = "latin"
 scriptencoding utf8
+let b:keymap_name = "latin"
 hi lCursor cterm=NONE ctermbg=magenta ctermfg=magenta gui=NONE guibg=magenta guifg=magenta
 loadkeymap
 " Don't remove this line!
