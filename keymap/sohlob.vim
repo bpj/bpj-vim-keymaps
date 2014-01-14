@@ -1,7 +1,7 @@
 
 scriptencoding utf8
 let b:keymap_name = "sohlob"
-hi lCursor cterm=NONE ctermbg=cyan ctermfg=cyan gui=NONE guibg=cyan guifg=cyan
+hi lCursor guibg=SlateBlue guifg=SlateBlue
 loadkeymap
 " Don't remove this line!
 

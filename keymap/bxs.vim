@@ -36,7 +36,8 @@
 
 let b:keymap_name = "BXS"
 scriptencoding utf8
-hi lCursor cterm=NONE ctermbg=blue ctermfg=blue gui=NONE guibg=blue guifg=blue
+hi lCursor guibg=blue guifg=blue
+
 loadkeymap
 " May need to type any [^a-z] ASCII char as itself sometime...
 \"!         !
