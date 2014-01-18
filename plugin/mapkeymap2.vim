@@ -1,14 +1,15 @@
 " Hacky plugin to set keymap switching mappings
+"
+" The nifty thing is that you can map a key combo
+" to swith to your last used keymap and back again
 
 fun! s:NoKeymap()
     setl keymap=""
-    " setl iminsert=0
 endfun
 
 fun! s:SetKeymap(mapname)
     let b:lastkeymap = &l:keymap
     exe 'setl keymap='.a:mapname
-    " setl iminsert=1
     if empty(&l:keymap)
         call <SID>NoKeymap()
         map()
@@ -48,6 +49,7 @@ endif
 
 :com! -nargs=+ AddKeymap :call <SID>AddKeymap(<f-args>)
 :com! -nargs=1 SetKeymap :call <SID>SetKeymap(<f-args>)
+:com! -nargs=0 NoKeymap  :call <SID>NoKeymap()
 :com! -nargs=0 MapKeymaps :call <SID>MapKeymaps()
 
 nnor <F11><F11> :call <SID>ToggleKeymap()<CR>
