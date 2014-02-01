@@ -1,15 +1,14 @@
-
+" vim: set noet ts=8 sts=8:
 scriptencoding utf8
 let b:keymap_name = "sohlob"
 hi lCursor guibg=SlateBlue guifg=SlateBlue
 loadkeymap
 " Don't remove this line!
 
-...	...
-..	.
-,,	,
-::	:
-;;	;
+\".	.
+\",	,
+\":	:
+\";	;
 
 ;s	ś
 ;S	Ś
@@ -29,13 +28,19 @@ loadkeymap
 .x	ǯ
 .X	Ǯ
 .j	ǰ
-.J	J̌
+.J	ǰ
 .q	ǧ
 .Q	Ǧ
 .h	ȟ
 .H	Ȟ
 .k	ǩ
 .K	Ǩ
+.b	b̌
+.B	B̌
+.d	ď
+.D	Ď
+.t	f̌
+.T	F̌
 .n	ň
 .N	Ň
 :g	ŋ̌
@@ -51,12 +56,16 @@ loadkeymap
 .y	y̌
 .Y	Y̌
 
-!z	ż
-!Z	Ż
-!x	ʒ̇
-!X	Ʒ̇
-!c	ċ
-!C	Ċ
+:z	ż
+:Z	Ż
+:x	ʒ̇
+:X	Ʒ̇
+:c	ċ
+:C	Ċ
+:t	þ
+:T	Þ
+:d	ð
+:D	Ð
 
 .g	ŋ
 .G	Ŋ
@@ -71,10 +80,14 @@ loadkeymap
 ,M	M̭
 ,n	ṋ
 ,N	Ṋ
-;n	ṋ̌
-;N	Ṋ̌
-;g	ŋ̭
-;G	Ŋ̭
+,.n	ṋ̌
+,.N	Ṋ̌
+.,n	ṋ̌
+.,N	Ṋ̌
+,.g	ŋ̭
+,.G	Ŋ̭
+.,g	ŋ̭
+.,G	Ŋ̭
 ,w	w̭
 ,W	W̭
 ,y	y̭
@@ -85,7 +98,6 @@ loadkeymap
 ,T	Ṱ
 ,f	f̭
 ,F	F̭
-,C  C̭
 
 :a	ä
 :A	Ä
@@ -100,17 +112,21 @@ loadkeymap
 :y	ÿ
 :Y	Ÿ
 
-:s	ṣ
-:S	Ṣ
-:z	ẓ
-:Z	Ẓ
-:c	c̣
-:C	C̣
-:x	ʒ̣
-:X	Ʒ̣
+!s	ṣ
+!S	Ṣ
+!z	ẓ
+!Z	Ẓ
+!c	c̣
+!C	C̣
+!x	ʒ̣
+!X	Ʒ̣
 
-:F	F̭̌
-:K	Ǩ̭
-:T	Č̭
-:L	Ḽ̌
+,.K	Ǩ̭
+,.C	Č̭
+,.L	Ḽ̌
+.,K	Ǩ̭
+.,C	Č̭
+.,L	Ḽ̌
 
+	
+" :'<,'>g/[a-z]/call append(line('.'),toupper(getline('.')))
