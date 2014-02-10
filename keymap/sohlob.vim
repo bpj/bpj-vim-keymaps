@@ -72,6 +72,7 @@ loadkeymap
 .e	ə
 .E	Ə
 
+,c	ç
 ,l	ḽ
 ,L	Ḽ
 ,r	r̭
@@ -111,6 +112,11 @@ loadkeymap
 :U	Ü
 :y	ÿ
 :Y	Ÿ
+
+$a	ᵃ
+$e	ᵉ
+$i	ⁱ
+$u	ᵘ
 
 !s	ṣ
 !S	Ṣ
