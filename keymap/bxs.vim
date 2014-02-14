@@ -85,7 +85,7 @@
 
 
 let b:keymap_name = "BXS"
-scriptencoding utf8
+scriptencoding utf-8
 hi lCursor guibg=blue guifg=blue
 
 loadkeymap
