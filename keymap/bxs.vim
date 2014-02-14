@@ -52,26 +52,34 @@
 " issue tracker!)
 "
 " ------------------------------------------------------------------------------
-" Char  CXS     BXS     because
-" ----- ------- ------- --------------------------------------------------------
-" ɺ     l\      4\      see ȴ
+" BXS       CXS     Char        because
+" --------- ------- -------     ------------------------------------------------
+" 4\        l\      ɺ       see l\
 "
-" ȴ     n/a     l\      because ɪ want to be able to use the non˗IPA (why?)
-"                       ȶ ȡ ȵ ȴ for alveopalatal consonants beside ɕ ʑ
-"                       and since the latter are s\ z\ I naturally
-"                       wanted to assign t\ d\ n\ l\ to them.  Because
-"                       of Sohlob these see a lot more use by me than ɺ
-"                       and I wanted a simple and consistent mapping for
-"                       them.  I guess I could have assigned the whole
-"                       ȶ ȡ ȵ ȴ ɕ ʑ gang to t; d; n; l; s; z; since
-"                       there is always _j for ʲ and although I'm now
-"                       used to t\ etc. I might do that and change l\
-"                       back to ɺ if that mapping is important to
-"                       someone.
+" l\                ȴ       ɪ wanted to be able to use the non˗IPA (why?)
+" S; Z;     s\ z\   ɕ ʑ     ȶ ȡ ȵ ȴ for alveopalatal consonants beside ɕ ʑ
+" t; d;     *  *    ȶ ȡ     and since the latter are s\ z\ I naturally
+" n; l;     *  *    ȵ ȴ     wanted to assign t\ d\ n\ l\ to them.  Because
+"                           of Sohlob these see a lot more use by me than ɺ
+"                           and I wanted a simple and consistent mapping for
+"                           them.  I guess I should have assigned the whole
+"                           ȶ ȡ ȵ ȴ ɕ ʑ gang to t; d; n; l; S; Z; to
+"                           begin with since they are kindof official CXS for
+"                           the kindof official IPA for these sounds,
+"                           except for S; and Z; which anyway are
+"                           kindof right, blend in better with the
+"                           others and correspond to what my Russian
+"                           teachers (who I hope have forgotten me) used
+"                           for what actually are /ɕ/ and /ʑ/ -- and I
+"                           don't think [ʃʲ ʒʲ] can actually at all be
+"                           distinguished from [ɕ ʑ]. There is always _j for ʲ.
+"                           So you can consider l\ for ȴ as well as t\ d\ n\ 
+"                           deprecated for now *if* I can get disused to
+"                           them! Of course s\ and z\ won't go away!
 "
-" ɸ     p\      P       because that's what I always think it is anyway,
-"                       based on the analogy of B for β anyway.  There is
-"                       of course v\ for ʋ, and p\ for ɸ is still there too!
+" P     p\      ɸ           because that's what I always think it is anyway,
+"                           based on the analogy of B for β.  There is still
+"                           of course v\ for ʋ, and p\ for ɸ is still there too!
 " ------------------------------------------------------------------------------
 
 
@@ -371,6 +379,7 @@ c\\             <Char-0x25cc>   U+25CC DOTTED CIRCLE
 D               ð               U+00F0 LATIN SMALL LETTER ETH
 " BXS addition
 d\\             ȡ               U+0221 LATIN SMALL LETTER D WITH CURL
+d;              ȡ               U+0221 LATIN SMALL LETTER D WITH CURL
 " BXS addition
 D\\             ᴆ               U+1D06 LATIN LETTER SMALL CAPITAL ETH
 d_<             ɗ               U+0257 LATIN SMALL LETTER D WITH HOOK
@@ -405,8 +414,9 @@ K\\             ɮ               U+026E LATIN SMALL LETTER LEZH
 L               ʎ               U+028E LATIN SMALL LETTER TURNED Y
 " BXS change
 l\\             ȴ               U+0234 LATIN SMALL LETTER L WITH CURL
+l;              ȴ               U+0234 LATIN SMALL LETTER L WITH CURL
 "l\\            ɺ               U+027A LATIN SMALL LETTER TURNED R WITH LONG LEG
-L\\             ʟ               U+029F LAT$M    ꟺ               "LATIN LETTER SMALL CAPITAL TURNED MIN LETTER SMALL CAPITAL L
+L\\             ʟ               U+029F LATIN LETTER SMALL CAPITAL L
 l_e             ɫ               U+026B LATIN SMALL LETTER L WITH MIDDLE TILDE
 l_s             ʪ               U+02AA LATIN SMALL LETTER LS DIGRAPH
 l_z             ʫ               U+02AB LATIN SMALL LETTER LZ DIGRAPH
@@ -416,6 +426,7 @@ M\\             ɰ               U+0270 LATIN SMALL LETTER TURNED M WITH LONG LE
 N               ŋ               U+014B LATIN SMALL LETTER ENG
 " BXS‑addition
 n\\             ȵ               U+0235 LATIN SMALL LETTER N WITH CURL
+n;              ȵ               U+0235 LATIN SMALL LETTER N WITH CURL
 N\\             ɴ               U+0274 LATIN LETTER SMALL CAPITAL N
 n`              ɳ               U+0273 LATIN SMALL LETTER N WITH RETROFLEX HOOK
 n_n             ƞ               U+019E LATIN SMALL LETTER N WITH LONG RIGHT LEG
@@ -440,10 +451,12 @@ r\\`            ɻ               U+027B LATIN SMALL LETTER TURNED R WITH HOOK
 r`              ɽ               U+027D LATIN SMALL LETTER R WITH TAIL
 S               ʃ               U+0283 LATIN SMALL LETTER ESH
 s\\             ɕ               U+0255 LATIN SMALL LETTER C WITH CURL
+S;              ɕ               U+0255 LATIN SMALL LETTER C WITH CURL
 S_j;            ʆ               U+0286 LATIN SMALL LETTER ESH WITH CURL
 s`              ʂ               U+0282 LATIN SMALL LETTER S WITH HOOK
 T               θ               U+03B8 GREEK SMALL LETTER THETA
 t\\             ȶ               U+0236 LATIN SMALL LETTER T WITH CURL
+t;              ȶ               U+0236 LATIN SMALL LETTER T WITH CURL
 t_<             ƭ               U+01AD LATIN SMALL LETTER T WITH HOOK
 t_;             ƫ               U+01AB LATIN SMALL LETTER T WITH PALATAL HOOK
 t_s             ʦ               U+02A6 LATIN SMALL LETTER TS DIGRAPH
@@ -471,7 +484,8 @@ Z               ʒ               U+0292 LATIN SMALL LETTER EZH
 " BXS addition
 i_z             ɿ               U+027F LATIN SMALL LETTER REVERSED R WITH FISHHOOK
 z\\             ʑ               U+0291 LATIN SMALL LETTER Z WITH CURL
-Z_j             ʓ               U+0293 LATIN SMALL LETTER EZH WITH CURL
+Z;              ʑ               U+0291 LATIN SMALL LETTER Z WITH CURL
+Z\              ʓ               U+0293 LATIN SMALL LETTER EZH WITH CURL
 z`              ʐ               U+0290 LATIN SMALL LETTER Z WITH RETROFLEX HOOK
 " BXS addition
 i`              ʅ               U+0285 LATIN SMALL LETTER SQUAT REVERSED ESH
