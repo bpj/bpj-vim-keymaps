@@ -1,30 +1,32 @@
-" BXS to Unicode IPA keymap.
-" BXS is a modification of CXS which in turn is a
-" modification of X-SAMPA! 
+" BXS to Unicode IPA keymap for Vim.
+" BXS is a modification of CXS which in turn is a modification of X-SAMPA! 
 " See <http://www.theiling.de/ipa/> for CXS.
 "
 " Maintainer: Benct Philip Jonsson <bpjonsson+bxs@gmail.com>
 "
+" Github: <https://github.com/bpj/vim-keymap/blob/master/keymap/bxs.vim>
+"
 " Changed: 14 feb 2014
-"           Back from <char-nnn> notation to UTF-8 except for marks where
-"           it doesn't work (at least it doesn't work with combining marks).
-"           Changed 0\ to be the empty set symbol -- you can get ASCII 0
-"           with "0.
-"Changed: 2013
+"           *   Back from <char-nnn> notation to UTF-8 except for marks where
+"               it doesn't work (at least it doesn't work with combining marks).
+"           *   Changed 0\ to be the empty set symbol -- you can get ASCII 0
+"               with "0.
+"           *   Added notes on a couple of important differences from CXS.
+" Changed: 2013
 "           Now uses $<character> for small caps. NB that e.g. $i is ɪ
 "           while $I is ᵻ and $d is ᴅ while $D is ᴆ.  Look at the bottom
 "           of the file to see them.
-"Changed: 9 dec 2012
+" Changed: 9 dec 2012
 "           Some bug cleanup.  Made , (comma) work for secondary
 "           stress and added i\
-"Changed: 13 aug 2012
+" Changed: 13 aug 2012
 "           Changed 4\` to U+F269, SIL PUA assignment for
 "           LATIN SMALL LETTER TURNED R WITH LONG LEG AND HOOK
 "           <http://scripts.sil.org/SILPUAassignments>
-"Changed: 2 May 2012
+" Changed: 2 May 2012
 "           Changed notation for literal ASCII characters to
 "           "<character> (doublequote+character>
-"Changed: 11 aug 2009
+" Changed: 11 aug 2009
 "           Changed to <Char-n> syntax.         
 "           Added codes and names where the Unicode::UCD Perl module knew them.
 " Changed: 6 aug 2009
@@ -39,9 +41,39 @@
 "           literal $ whithout gymnastics!         This change
 "           also makes the notation here consistent with
 "           that in my Perl BXS converter.
-"
 "           I also added `\ to allow typing an actual backtick 
 "           without changing keymaps or hitting Esc.
+"
+" NOTES: important differences from CXS 
+" =====================================
+
+" (If you discover any differences -- as opposed to additions -- which
+" I have missed to note please drop me a note by email or in the Github
+" issue tracker!)
+"
+" ------------------------------------------------------------------------------
+" Char  CXS     BXS     because
+" ----- ------- ------- --------------------------------------------------------
+" ɺ     l\      4\      see ȴ
+"
+" ȴ     n/a     l\      because ɪ want to be able to use the non˗IPA (why?)
+"                       ȶ ȡ ȵ ȴ for alveopalatal consonants beside ɕ ʑ
+"                       and since the latter are s\ z\ I naturally
+"                       wanted to assign t\ d\ n\ l\ to them.  Because
+"                       of Sohlob these see a lot more use by me than ɺ
+"                       and I wanted a simple and consistent mapping for
+"                       them.  I guess I could have assigned the whole
+"                       ȶ ȡ ȵ ȴ ɕ ʑ gang to t; d; n; l; s; z; since
+"                       there is always _j for ʲ and although I'm now
+"                       used to t\ etc. I might do that and change l\
+"                       back to ɺ if that mapping is important to
+"                       someone.
+"
+" ɸ     p\      P       because that's what I always think it is anyway,
+"                       based on the analogy of B for β anyway.  There is
+"                       of course v\ for ʋ, and p\ for ɸ is still there too!
+" ------------------------------------------------------------------------------
+
 
 let b:keymap_name = "BXS"
 scriptencoding utf8
