@@ -12,6 +12,7 @@
 "           *   Changed 0\ to be the empty set symbol -- you can get ASCII 0
 "               with "0.
 "           *   Added notes on a couple of important differences from CXS.
+"           *   Went ahead and added t; d; n; l; S; Z; for alveopalatals
 " Changed: 2013
 "           Now uses $<character> for small caps. NB that e.g. $i is ɪ
 "           while $I is ᵻ and $d is ᴅ while $D is ᴆ.  Look at the bottom
