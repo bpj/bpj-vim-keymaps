@@ -11,7 +11,11 @@ My variation of [CXS](http://www.theiling.de/ipa/), mainly additions to accommod
     l\      ȴ  U+0234 LATIN SMALL LETTER L WITH CURL
     4\      ɺ  U+027A LATIN SMALL LETTER TURNED R WITH LONG LEG
 
+though I might revert that change soonish since I went ahead and added `t; d; n; l; S; Z;` for alveopalatals **ȶ ȡ ȵ ȴ ɕ ʑ**, though my former `t\ d\ n\ l\` are still in place for now and `s\ z\` of course won't go away. 
+
 Moreover `"` + any ASCII non-`a-z` character gives you that ASCII character. (Yes this means you need to type `""` to get an ASCII double-quote, but when did you need it in a phone\*ic transcription last?)
+
+BTW you might want to `:set delcombine` and `:set maxcombine=6`.
 
 bpjgreek.vim
 ------------
