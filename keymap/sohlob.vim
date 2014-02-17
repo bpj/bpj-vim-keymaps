@@ -1,4 +1,4 @@
-" vim: set noet ts=12 sts=12:
+" vim: set noet ts=12 sts=12 list:
 scriptencoding utf8
 let b:keymap_name = "sohlob"
 hi lCursor guibg=SlateBlue guifg=SlateBlue
