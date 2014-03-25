@@ -624,3 +624,15 @@ $<kMinus>               ẝ
 &$t                     ﬅ                       U+FB05 LATIN SMALL LIGATURE LONG S T
 &$T                     ST
 &$T                     St
+
+^j	ʲ
+_j	ⱼ
+^r	ʳ
+^l	ˡ
+"^l%
+^z	ᶻ
+^s	ˢ
+^v	ᵛ
+^x	ˣ
+^w	ʷ
+^y	ʸ
