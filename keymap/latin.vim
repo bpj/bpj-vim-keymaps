@@ -40,16 +40,16 @@ _(                      <Char-0x032f>           " -̯                    COMBINI
 _~                      <Char-0x0330>           " -̰                    COMBINING TILDE BELOW
 _|                      <Char-0x0331>           " -̱                    COMBINING MACRON BELOW
 %                       <Char-0x0338>           " -̸                    COMBINING LONG SOLIDUS OVERLAY
-^x                      <char-0x033d>           " -̽                    COMBINING X ABOVE
-^X                      <CHAR-0X033D>
-^X                      <Char-0X033D>
+" ^x                      <char-0x033d>           " -̽                    COMBINING X ABOVE
+" ^X                      <CHAR-0X033D>
+^X                      <Char-0x033D>
 ^~                      <Char-0x033e>           " -̾                    COMBINING VERTICAL TILDE
-`(                      <Char-0x0351>           " -͑                    COMBINING LEFT HALF RING ABOVE
+^(                      <Char-0x0351>           " -͑                    COMBINING LEFT HALF RING ABOVE
 .)                      <Char-0x0352>           " -͒                    COMBINING FERMATA
 _x                      <char-0x0353>           " -͓                    COMBINING X BELOW
 _X                      <CHAR-0X0353>
 _X                      <Char-0X0353>
-`)                      <Char-0x0357>           " -͗                    COMBINING RIGHT HALF RING ABOVE
+^)                      <Char-0x0357>           " -͗                    COMBINING RIGHT HALF RING ABOVE
 _))                     <Char-0x035c>           " -͜                    COMBINING DOUBLE BREVE BELOW
 ((                      <Char-0x035d>           " -͝                    COMBINING DOUBLE BREVE
 ||                      <Char-0x035e>           " -͞                    COMBINING DOUBLE MACRON
