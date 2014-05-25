@@ -132,4 +132,5 @@ $B	Ð
 $b	ð
 $O	Ɔ  " 0186        LATIN CAPITAL LETTER OPEN O
 $o	ɔ  " 0254        LATIN SMALL LETTER OPEN O
-
+$N	Ṅ
+$n	ṅ
