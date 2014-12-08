@@ -21,18 +21,10 @@
 "           -  ǧ now maps to ,g (not ,q!)
 
 scriptencoding utf8
-SCRIPTENCODING UTF8
-Scriptencoding Utf8
 let b:keymap_name = "sohlob"
-LET B:KEYMAP_NAME = "SOHLOB"
-Let B:Keymap_Name = "Sohlob"
 hi lcursor guibg=slateblue guifg=slateblue
-HI LCURSOR GUIBG=SLATEBLUE GUIFG=SLATEBLUE
-Hi Lcursor Guibg=Slateblue Guifg=Slateblue
 loadkeymap
-loadkeymap              
-LOADKEYMAP              
-Loadkeymap              
+
 " Don't remove this line!
 
 
