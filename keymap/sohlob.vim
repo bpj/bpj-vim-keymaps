@@ -236,6 +236,12 @@ $i                      ⁱ
 $u                      ᵘ
 $y                      ʸ
 
+
+$I		ɪ  " U+026A LATIN LETTER SMALL CAPITAL I
+$A		ᴀ  " U+1D00 LATIN LETTER SMALL CAPITAL A
+$E		ᴇ  " U+1D07 LATIN LETTER SMALL CAPITAL E
+$U		ᴜ  " U+1D1C LATIN LETTER SMALL CAPITAL U
+
 .s                      ṣ
 .S                      Ṣ
 .z                      ẓ
