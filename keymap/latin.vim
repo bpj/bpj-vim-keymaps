@@ -1,4 +1,4 @@
-" vim: set noet ts=24 sts=24 list:
+" vim: set noet ts=24 sts=24 ro list:
 "
 " Imortant: change 27 March 2014!
 " Since the use of & to mark digraphs conflicted with the use of & for
@@ -12,6 +12,7 @@ let	b:keymap_name	= "latin"
 hi	lcursor	guibg=magenta guifg=magenta
 loadkeymap	
 " Don't remove this line!
+'	ʹ	"	U+02B9 MODIFIER LETTER PRIME
 \\	<Char-0x0300>	" -̀	COMBINING GRAVE ACCENT
 /	<Char-0x0301>	" -́	COMBINING ACUTE ACCENT
 <kDivide>	<Char-0x0301>
@@ -348,6 +349,8 @@ T%	Ⱦ
 {Qg}	Ɂ
 b+-	ƀ	U+0243 LATIN CAPITAL LETTER B WITH STROKE
 B+-	Ƀ
+b<kMinus>	ƀ	U+0243 LATIN CAPITAL LETTER B WITH STROKE
+B<kMinus>	Ƀ
 u+-	ʉ	U+0244 LATIN CAPITAL LETTER U BAR
 U+-	Ʉ
 u<kMinus>	ʉ
