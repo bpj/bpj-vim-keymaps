@@ -6,19 +6,39 @@
 "
 " CHANGES:
 "
+" Changed: 21 November 2015
+"   Clarified change note from 8 October 2015.
+"   Added some comments as 'section headings'
+" Changed: 3 November 2015
+"   Added Latin Beta and Latin Chi as $B $b $K $k
+"       Most of these chars are brand new in Unicode 8.0.0
+"       For now Everson Mono or Unifont must be used to display, Quivira to
+"       print proportionally.
+"   Added Greek Phi Theta Gamma Delta as $F $f $T $t $G $g $D $d
+"
 " Important: change 8 October 2015
 "   I have found the device with curly brackets for n-graphs nnoying so I have
-"   replaced it with a system with different prefixes depending on the number of
+"   replaced it with a system with different sigils depending on the number of
 "   characters in the n-graph:
 "
 "      `#`      for tetragraphs   (`#` + 4 characters)
 "      `@`      for trigraphs     (`@` + 3 characters)
 "      `&`      for digraphs      (`&` + 2 characters)
 "      `$`      for monographs    (`$` + 1 character, effectively a special digraph)
+"      `"`      plus any literal ASCII character for that character as before: 
+"                   `""` -> `"`
+"                   `"#` -> `#`
+"                   `"@` -> `@`
+"                   `"&` -> `&`
+"                   `"a` -> `a`
+"                   etc.
 "
 "   There is currently only one $-graph: `$$` for long s, but I plan to replace
-"   some &-graphs with $-graphs as occasion arises.  Note that these four
-"   characters may occur as non-prefix characters in a prefixed n-graph.
+"   some &-graphs with $-graphs as occasion arises.
+"   (Note 2015-11-21: some were added 2015-11-3. Further additions/changes
+"   will not be added here. Read the change log!)
+"
+"   Note that these four characters may occur as non-sigil characters in a prefixed n-graph.
 "   As yet only `@` for 'loop' and `$` for long s actually do.
 "
 "   Non-decomposing letters with overstruck diacritics like `ł` are now treated as digraphs: `&l/`
@@ -77,6 +97,8 @@ let	b:keymap_name	= "latin"
 hi	lcursor	guibg=magenta guifg=magenta
 loadkeymap	
 " Don't remove this line!
+"
+" ASCII punctuation chars mapped to combining marks and modifier letters
 '	ʹ	"	U+02B9 MODIFIER LETTER PRIME
 \\	<Char-0x0300>	" -̀	COMBINING GRAVE ACCENT
 /	<Char-0x0301>	" -́	COMBINING ACUTE ACCENT
@@ -127,6 +149,8 @@ _))	<Char-0x035c>	" -͜	COMBINING DOUBLE BREVE BELOW
 _||	<Char-0x035f>	" -͟	COMBINING DOUBLE MACRON BELOW
 ~~	<Char-0x0360>	" -͠	COMBINING DOUBLE TILDE
 ))	<Char-0x0361>	" -͡	COMBINING DOUBLE INVERTED BREVE
+
+" " + ASCII for literal ASCII -- all non-blank ASCII chars
 \"!	!	U+0021 EXCLAMATION MARK
 \"\"	\"	U+0022 QUOTATION MARK
 \"#	#	U+0023 NUMBER SIGN
@@ -210,6 +234,8 @@ _||	<Char-0x035f>	" -͟	COMBINING DOUBLE MACRON BELOW
 \"Y	Y
 \"z	z	U+005A LATIN CAPITAL LETTER Z
 \"Z	Z
+
+" n-graphs for non-decomposable Latin script letters
 &ae	æ	U+00C6 LATIN CAPITAL LETTER AE
 &AE	Æ
 &Ae	Æ
@@ -601,6 +627,23 @@ _||	<Char-0x035f>	" -͟	COMBINING DOUBLE MACRON BELOW
 &H?	Ɦ
 &h?	ɦ
 &H?	ɦ
+" Some Latin clones of Greek letters with distinct uppercase in Unicode 8.0.0
+$K	Ꭓ	U+A7B3 LATIN CAPITAL LETTER CHI
+$k	ꭓ	lower case is AB53 
+$B	Ꞵ	A7B4 LATIN CAPITAL LETTER BETA
+$b	ꞵ	A7B5 LATIN SMALL LETTER BETA
+" N-graphs for some Greek letters used as transliteration characters
+$F	Φ
+$f	φ
+$T	Θ
+$t	θ
+$D	Δ
+$d	δ
+$G	Γ
+$g	γ
+
+
+
 &i.	ı	U+0131 LATIN SMALL LETTER DOTLESS I
 &I.	I
 &j.	ȷ	U+0237 LATIN SMALL LETTER DOTLESS J
@@ -612,6 +655,7 @@ $$	ſ	U+017F LATIN SMALL LETTER LONG S
 &$t	ﬅ	U+FB05 LATIN SMALL LIGATURE LONG S T
 &$T	ST
 
+" N-graphs for modifier letters
 &^j	ʲ
 &_j	ⱼ
 &^r	ʳ
@@ -628,7 +672,7 @@ $$	ſ	U+017F LATIN SMALL LETTER LONG S
 &^o	ᵒ
 &^e	ᵉ
 &^a	ᵃ
-&
+ 
 &^´	ˊ
 &^`	ˋ
 &^`	ˋ
