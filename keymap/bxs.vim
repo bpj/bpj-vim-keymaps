@@ -57,7 +57,7 @@
 " --------- ------- -------     ------------------------------------------------
 " 4\        l\      ɺ       see l\
 "
-" l\                ȴ       ɪ wanted to be able to use the non˗IPA (why?)
+" l\                ȴ       ɪ wanted to be able to use the non˗IPA (why not?)
 " S; Z;     s\ z\   ɕ ʑ     ȶ ȡ ȵ ȴ for alveopalatal consonants beside ɕ ʑ
 " t; d;     *  *    ȶ ȡ     and since the latter are s\ z\ I naturally
 " n; l;     *  *    ȵ ȴ     wanted to assign t\ d\ n\ l\ to them.  Because
