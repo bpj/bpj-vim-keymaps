@@ -78,49 +78,15 @@ call switchkeymap#map_dict(keymapdict, '<F9>')
 
 This will define the following mappings for both normal and insert mode:
 
-<!--
-  ------------- --------------------------------------------------------------
-  `<F9><F9>`    Toggles between the current keymap and the previously used one
-                (both of which may be none).
+Mapping
+-------------|----------------------------------------------------------------------------------
+`<F9><F9>`   |Toggles between the current keymap and the previously used one (both of which may be none).
+`<F9>0`      |Deactivates the keymap. (Actually sets the ['keymap'][] option to an empty string.)
+`<F9>a`      |Saves the previous keyp to `b:prev_keymap` and activates the `accents.vim` keymap.
+`<F9>l`      |Saves the previous keyp to `b:prev_keymap` and activates the `bpjlatin.vim` keymap.
+`<F9>r`      |Saves the previous keyp to `b:prev_keymap` and activates the `myrussian.vim` keymap.
 
-  `<F9>0`       Deactivates the keymap. (Actually sets the ['keymap'][]
-                option to an empty string.)
-
-  `<F9>a`       Activates the `accents.vim` keymap.
-
-  `<F9>l`       Activates the `bpjlatin.vim` keymap.
-
-  `<F9>r`       Activates the `myrussian.vim` keymap.
-  ------------- --------------------------------------------------------------
--->
-<table style="width:97%;">
-<colgroup>
-<col width="17%" />
-<col width="79%" />
-</colgroup>
-<tbody>
-<tr class="odd">
-<td align="left"><code>&lt;F9&gt;&lt;F9&gt;</code></td>
-<td>Toggles between the current keymap and the previously used one (both of which may be none).</td>
-</tr>
-<tr class="even">
-<td align="left"><code>&lt;F9&gt;0</code></td>
-<td>Deactivates the keymap. (Actually sets the <a href="http://vimhelp.appspot.com/options.txt.html#&#39;keymap&#39;" title=":h &#39;keymap&#39;">'keymap'</a> option to an empty string.)</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>&lt;F9&gt;a</code></td>
-<td>Activates the <code>accents.vim</code> keymap.</td>
-</tr>
-<tr class="even">
-<td align="left"><code>&lt;F9&gt;l</code></td>
-<td>Activates the <code>bpjlatin.vim</code> keymap.</td>
-</tr>
-<tr class="odd">
-<td align="left"><code>&lt;F9&gt;r</code></td>
-<td>Activates the <code>myrussian.vim</code> keymap.</td>
-</tr>
-</tbody>
-</table>
+The previous and current keymap are per buffer. The variables `b:prev_keymap` and `b:cur_keymap` are used to keep track of them.
 
   [Vim keymaps]: http://vimhelp.appspot.com/mbyte.txt.html#mbyte-keymap ":h mbyte-keymap"
   [`:set delcombine`]: http://vimhelp.appspot.com/options.txt.html#'delcombine' ":h 'delcombine'"
