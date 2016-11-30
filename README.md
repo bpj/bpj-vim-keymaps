@@ -82,9 +82,9 @@ Mapping      |Effect
 -------------|----------------------------------------------------------------------------------
 `<F9><F9>`   |Toggles between the current keymap and the previously used one (both of which may be none).
 `<F9>0`      |Deactivates the keymap. (Actually sets the ['keymap'][] option to an empty string.)
-`<F9>a`      |Saves the previous keyp to `b:prev_keymap` and activates the `accents.vim` keymap.
-`<F9>l`      |Saves the previous keyp to `b:prev_keymap` and activates the `bpjlatin.vim` keymap.
-`<F9>r`      |Saves the previous keyp to `b:prev_keymap` and activates the `myrussian.vim` keymap.
+`<F9>a`      |Saves the previous keymap to `b:prev_keymap` and activates the `accents.vim` keymap.
+`<F9>l`      |Saves the previous keymap to `b:prev_keymap` and activates the `bpjlatin.vim` keymap.
+`<F9>r`      |Saves the previous keymap to `b:prev_keymap` and activates the `myrussian.vim` keymap.
 
 The previous and current keymap are per buffer. The variables `b:prev_keymap` and `b:cur_keymap` are used to keep track of them.
 
