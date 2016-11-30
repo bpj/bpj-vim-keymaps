@@ -78,7 +78,7 @@ call switchkeymap#map_dict(keymapdict, '<F9>')
 
 This will define the following mappings for both normal and insert mode:
 
-Mapping      |
+Mapping      |Effect
 -------------|----------------------------------------------------------------------------------
 `<F9><F9>`   |Toggles between the current keymap and the previously used one (both of which may be none).
 `<F9>0`      |Deactivates the keymap. (Actually sets the ['keymap'][] option to an empty string.)
