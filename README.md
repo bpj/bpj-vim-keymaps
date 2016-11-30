@@ -76,7 +76,7 @@ let keymapdict = {
 call switchkeymap#map_dict(keymapdict, '<F9>')
 ```
 
-This will define the following mappings :
+This will define the following mappings for both normal and insert mode:
 
 <!--
   ------------- --------------------------------------------------------------
