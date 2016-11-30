@@ -36,7 +36,6 @@ endfun
 " and pressing <F11><F11> will set it to its previous value for the buffer 
 fun! switchkeymap#map_set(key, ...)
     let keymap = a:0 ? "'" . a:1 . "'" : ""
-    echo a:key . " => " . keymap
     exe "inor <silent> " . a:key . " <C-O>:call switchkeymap#switch(" . keymap . ")<cr>"
     exe "nnor <silent> " . a:key . " :call switchkeymap#switch(" . keymap . ")<cr>"
 endfun
