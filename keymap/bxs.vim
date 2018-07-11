@@ -1,11 +1,23 @@
+" Vim: set noet ts=16 sts=16 nowrite:
+"
 " BXS to Unicode IPA keymap for Vim.
 " BXS is a modification of CXS which in turn is a modification of X-SAMPA! 
 " See <http://www.theiling.de/ipa/> for CXS.
+"
 "
 " Maintainer: Benct Philip Jonsson <bpjonsson+bxs@gmail.com>
 "
 " Github: <https://github.com/bpj/vim-keymap/blob/master/keymap/bxs.vim>
 "
+" Changed: 19 aug 2017
+"           Added some CHARIS SIL PUA assignments. Thus there are now notations for
+"           several voiceless laterals, using "_K" as a modifier, and several
+"           extra modifier letters, plus the Oxford-style stacked @_I and @_U
+"           chars.
+"           Also added ꞎ  U+A78E LATIN SMALL LETTER L WITH RETROFLEX HOOK AND BELT.
+"               l`_K  ꞎ  U+A78E LATIN SMALL LETTER L WITH RETROFLEX HOOK AND BELT
+"               L_K  <char-0xf267>  "U+F267  LATIN SMALL LETTER TURNED Y WITH BELT
+"               L\\_K  <char-0xf268>  "U+F268  LATIN LETTER SMALL CAPITAL L WITH BELT
 " Changed: 14 feb 2014
 "           *   Back from <char-nnn> notation to UTF-8 except for marks where
 "               it doesn't work (at least it doesn't work with combining marks).
@@ -16,7 +28,7 @@
 " Changed: 2013
 "           Now uses $<character> for small caps. NB that e.g. $i is ɪ
 "           while $I is ᵻ and $d is ᴅ while $D is ᴆ.  Look at the bottom
-"           of the file to see them.
+"           of the file to see them.                       ^^--> near
 " Changed: 9 dec 2012
 "           Some bug cleanup.  Made , (comma) work for secondary
 "           stress and added i\
@@ -43,7 +55,7 @@
 "           also makes the notation here consistent with
 "           that in my Perl BXS converter.
 "           I also added `\ to allow typing an actual backtick 
-"           without changing keymaps or hitting Esc.
+"           without changing keymaps.
 "
 " NOTES: important differences from CXS 
 " =====================================
@@ -194,7 +206,7 @@ i\\             ɨ               U+0268 LATIN SMALL LETTER I WITH STROKE
 " BXS change/addition
 4\\             ɺ               U+027A LATIN SMALL LETTER TURNED R WITH LONG LEG
 " BXS addition. Important to me as it's found in Swedish dialects!
-4\\`            <Char-0xf269>   U+F269 (SIL PUA) LATIN SMALL LETTER TURNED R WITH LONG LEG AND HOOK
+" 4\\`          <Char-0xf269>   U+F269 (SIL PUA) LATIN SMALL LETTER TURNED R WITH LONG LEG AND HOOK
 5               ɫ               U+026B LATIN SMALL LETTER L WITH MIDDLE TILDE
 6               ɐ               U+0250 LATIN SMALL LETTER TURNED A
 7               ɤ               U+0264 LATIN SMALL LETTER RAMS HORN
@@ -209,8 +221,8 @@ i\\             ɨ               U+0268 LATIN SMALL LETTER I WITH STROKE
 ;               ʲ               U+02B2 MODIFIER LETTER SMALL J
 ;\\             ;
 <\\             ʢ               U+02A2 LATIN LETTER REVERSED GLOTTAL STOP WITH STROKE
-<F>             ↘               U+2198 SOUTH EAST ARROW
-<R>             ↗               U+2197 NORTH EAST ARROW
+<lt>F>             ↘               U+2198 SOUTH EAST ARROW
+<lt>R>             ↗               U+2197 NORTH EAST ARROW
 " BXS change/addition
 _=              <Char-0x030d>   U+030D COMBINING VERTICAL LINE ABOVE
 =               <Char-0x0329>   U+0329 COMBINING VERTICAL LINE BELOW
@@ -422,6 +434,7 @@ l_e             ɫ               U+026B LATIN SMALL LETTER L WITH MIDDLE TILDE
 l_s             ʪ               U+02AA LATIN SMALL LETTER LS DIGRAPH
 l_z             ʫ               U+02AB LATIN SMALL LETTER LZ DIGRAPH
 l`              ɭ               U+026D LATIN SMALL LETTER L WITH RETROFLEX HOOK
+l`_K            ꞎ               U+A78E LATIN SMALL LETTER L WITH RETROFLEX HOOK AND BELT
 M               ɯ               U+026F LATIN SMALL LETTER TURNED M
 M\\             ɰ               U+0270 LATIN SMALL LETTER TURNED M WITH LONG LEG
 N               ŋ               U+014B LATIN SMALL LETTER ENG
@@ -498,6 +511,8 @@ _~              <Char-0x0328>   U+0328 COMBINING OGONEK
 ~\\             ~               U+007E TILDE
 __              <Char-0x034f>   U+034F COMBINING GRAPHEME JOINER
 
+" SMALL CAPITALS
+
 $a              ᴀ               "U+1D00 LATIN LETTER SMALL CAPITAL A
 $b              ʙ               "U+0299 LATIN LETTER SMALL CAPITAL B
 $c              ᴄ               "U+1D04 LATIN LETTER SMALL CAPITAL C
@@ -544,7 +559,50 @@ $P              ᴪ               "U+1D2A GREEK LETTER SMALL CAPITAL PSI
 $l\\            ᴫ               "U+1D2B CYRILLIC LETTER SMALL CAPITAL EL
 $I              ᵻ               "U+1D7B LATIN SMALL CAPITAL LETTER I WITH STROKE
 $U              ᵾ               "U+1D7E LATIN SMALL CAPITAL LETTER U WITH STROKE
+$W              ꭥ               "U+AB65 GREEK LETTER SMALL CAPITAL OMEGA &#xAB65;
 " $R\\          ꝶ               "U+A776 LATIN LETTER SMALL CAPITAL RUM
-" $M            ꟺ               "U+A7FA LATIN LETTER SMALL CAPITAL TURNED M
-$g\\            г               U+0433 CYRILLIC SMALL LETTER GHE
-$k\\            к               U+043A CYRILLIC SMALL LETTER KA
+$M              ꟺ               "U+A7FA LATIN LETTER SMALL CAPITAL TURNED M
+$g\\            г               "U+0433 CYRILLIC SMALL LETTER GHE
+$k\\            к               "U+043A CYRILLIC SMALL LETTER KA
+
+" CHARIS SIL PRIVATE-USE (PUA) CHARACTERS
+" http://software.sil.org/charis/support/character-set-support/
+" BXS additions
+
+" Modifier letters
+
+_$&             <char-0xf1a1>   "U+F1A1  MODIFIER LETTER SMALL AE
+_$@\\           <char-0xf1a3>   "U+F1A3  MODIFIER LETTER SMALL REVERSED E
+_$3\\           <char-0xf1a4>   "U+F1A4  MODIFIER LETTER SMALL CLOSED REVERSED OPEN E
+_$2             <char-0xf1ab>   "U+F1AB  MODIFIER LETTER SMALL O WITH STROKE
+_$&\\           <char-0xf1ae>   "U+F1AE  MODIFIER LETTER SMALL CAPITAL OE
+_$$9            <char-0xf1ae>   "U+F1AE  MODIFIER LETTER SMALL CAPITAL OE
+_$Y             <char-0xf1b4>   "U+F1B4  MODIFIER LETTER SMALL CAPITAL Y
+_$$y            <char-0xf1b4>   "U+F1B4  MODIFIER LETTER SMALL CAPITAL Y
+_$7             <char-0xf1b5>   "U+F1B5  MODIFIER LETTER SMALL RAMS HORN
+_$X\\           <char-0xf1bc>   "U+F1BC  MODIFIER LETTER SMALL H WITH STROKE
+_$U\\           <char-0xf1cd>   "U+F1CD  MODIFIER LETTER SMALL CAPITAL U BAR
+_$$u\\          <char-0xf1cd>   "U+F1CD  MODIFIER LETTER SMALL CAPITAL U BAR
+_$L             <char-0xf1ce>   "U+F1CE  MODIFIER LETTER SMALL TURNED Y
+" <++>          <char-0xf1f1>   "U+F1F1  MODIFIER LETTER PITCH ONE
+" <++>          <char-0xf1f2>   "U+F1F2  MODIFIER LETTER PITCH TWO
+" <++>          <char-0xf1f3>   "U+F1F3  MODIFIER LETTER PITCH THREE
+" <++>          <char-0xf1f4>   "U+F1F4  MODIFIER LETTER PITCH FOUR
+" <++>          <char-0xf1f5>   "U+F1F5  MODIFIER LETTER PITCH FIVE
+" <++>          <char-0xf1f6>   "U+F1F6  MODIFIER LETTER PITCH SIX
+" <++>          <char-0xf1f7>   "U+F1F7  MODIFIER LETTER PITCH SEVEN
+" <++>          <char-0xf1f8>   "U+F1F8  MODIFIER LETTER PITCH EIGHT
+" <++>          <char-0xf1f9>   "U+F1F9  MODIFIER LETTER PITCH NINE
+
+" Latin
+
+" <++>          <char-0xf20d>   "U+F20D  LATIN CAPITAL LETTER D WITH STROKE AND HOOK
+" <++>          <char-0xf234>   "U+F234  LATIN CAPITAL LETTER Z WITH PALATAL HOOK
+" <++>          <char-0xf235>   "U+F235  LATIN SMALL LETTER EZH WITH PALATAL HOOK
+@_I             <char-0xf258>   "U+F258  LATIN LETTER SMALL CAPITAL I OVER SMALL SCHWA
+@_U             <char-0xf259>   "U+F259  LATIN LETTER SMALL UPSILON OVER SMALL SCHWA
+L_K             <char-0xf267>   "U+F267  LATIN SMALL LETTER TURNED Y WITH BELT
+L\\_K           <char-0xf268>   "U+F268  LATIN LETTER SMALL CAPITAL L WITH BELT
+4\\`            <char-0xf269>   "U+F269  LATIN SMALL LETTER TURNED R WITH LONG LEG AND HOOK
+" <++>          <char-0xf26d>   "U+F26D  LATIN SMALL LETTER B WITH LEFT HOOK
+
